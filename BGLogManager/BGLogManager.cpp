@@ -79,7 +79,7 @@ bool BGLogManager::Start()
 
 	m_pRunThread = new std::thread{BGLogManager::Run, this};
 	
-	BG_LOG_INFO("BGLogManager VERSION=%s", VERSION);
+	BG_LOG_INFO("BGLogManager Start VERSION=%s", VERSION);
 
 	return true;
 }
@@ -126,6 +126,7 @@ void BGLogManager::Run(BGLogManager* pLogMgr)
 			continue;
 
 		if (pLogMgr->IsStopRequest(log)) {
+			pLogMgr->Write(BGLog{ ELogLevel::BG_INFO, "BGLogManager Stop" });
 			return;
 		}
 
