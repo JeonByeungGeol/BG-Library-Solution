@@ -1,6 +1,6 @@
 #include "BGLogManager.h"
 
-#define VERSION "1.0.1"
+#define VERSION "v1.0.1"
 
 /**
  * !새로운 로그를 추가하면, 이곳에 추가해야 합니다.
@@ -80,7 +80,7 @@ bool BGLogManager::Start()
 
 	m_pRunThread = new std::thread{BGLogManager::Run, this};
 	
-	BG_LOG_INFO("BGLogManager Start VERSION=%s", VERSION);
+	BG_LOG_INFO("BGLogManager Version Check [VERSION = %s]", VERSION);
 
 	return true;
 }
@@ -127,7 +127,6 @@ void BGLogManager::Run(BGLogManager* pLogMgr)
 			continue;
 
 		if (pLogMgr->IsStopRequest(log)) {
-			pLogMgr->Write(BGLog{ ELogLevel::BG_INFO, "BGLogManager Stop" });
 			return;
 		}
 
