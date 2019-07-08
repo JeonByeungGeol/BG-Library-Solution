@@ -15,3 +15,6 @@
 // TODO: 프로그램에 필요한 추가 헤더는 여기에서 참조합니다.
 
 #include "BG_LIBRARY\Include\BGLogManager\BGLogManager.h"
+#include "BG_LIBRARY\Include\BGConfigManager\BGConfigManager.h"
+
+#define CONFIG_FILE_NAME "bg_config.ini"
