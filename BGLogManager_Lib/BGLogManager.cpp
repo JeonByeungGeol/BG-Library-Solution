@@ -247,9 +247,9 @@ void BGLogManager::RenewLogFileStream()
 		if (entry.second->is_open())
 			entry.second->close();
 
-		std::string fileName{ entry.first };
-		fileName.append(timestr);
-		entry.second->open(fileName, std::ios::app);
+		std::stringstream sStream;
+		sStream << entry.first << "\\" << timestr;
+		entry.second->open(sStream.str(), std::ios::app);
 	}
 }
 
