@@ -79,6 +79,8 @@ bool BGLogManager::Start()
 
 	m_pRunThread = new std::thread{BGLogManager::Run, this};
 	
+	BG_LOG_INFO("BGLogManager VERSION=%s", VERSION);
+
 	return true;
 }
 

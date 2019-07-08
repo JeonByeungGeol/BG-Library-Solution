@@ -73,10 +73,7 @@ private:
 	// 로그 레벨을 검사합니다.
 	bool CheckLogLevel(BGLog&);
 	bool CheckLogLevel(ELogLevel);
-
-	// 로그 레벨이 기본레벨인지 검사합니다.(기본로그레벨 : TRACE, DEBUG, INFO, WANING, ERROR, FATAL)
-	bool IsBasicLogLevel(BGLog&);
-
+	
 	// queue에서 로그를 하나 꺼냅니다.
 	BGLog Pick();
 		

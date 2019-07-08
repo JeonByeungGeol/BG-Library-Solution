@@ -24,3 +24,4 @@
 #include <map>
 #include <vector>
 
+#define VERSION "v1.0.0"
